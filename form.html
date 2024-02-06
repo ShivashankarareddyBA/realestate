@@ -4,85 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Account</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <h2>Register Account</h2>
+        </div>
+        <form  action="index.html" class="form" id="form">
+            <div class="field">
+                <label> User Name</label>
+                <input type="text" placeholder="name" id="userName">
+                <span class="material-icons success">check_circle</span>
+                <span class="material-icons error">error</span>
+                <small>Error Message</small>
 
-<div>
-    <form id="registerAccount">
-        User Name: <input type="text" name="userName"><br> <br>
-        Phone Number: <input type="tel" name="phoneNumber"><br> <br>
-        Email: <input type="email" name="email"><br> <br>
-        Watsup Number: <input type="tel" name="WatsupNumber"><br> <br>
+            </div>
+            <div class="field">
+                <label> Email Address</label>
+                <input type="email" placeholder="xyx@gmail.com" id="email">
+                <span class="material-icons success">check_circle</span>
+                <span class="material-icons error">error</span>
+                <small>Error Message</small>
+
+            </div>
+            <div class="field">
+                <label> Password</label>
+                <input type="password" placeholder="xxxxxxx" id="password">
+                <span class="material-icons success">check_circle</span>
+                <span class="material-icons error">error</span>
+                <small>Error Message</small>
+
+            </div>
+            <div class="field">
+                <label> Confirm Password</label>
+                <input type="password" placeholder="xxxxxxx" id="cpassword">
+                <span class="material-icons success">check_circle</span>
+                <span class="material-icons error">error</span>
+                <small>Error Message</small>
+
+            </div>
+            <div class="field">
+                <label> Phone Number</label>
+                <input type="tel" placeholder="9999999999" id="phoneNumber">
+                <span class="material-icons success">check_circle</span>
+                <span class="material-icons error">error</span>
+                <small>Error Message</small>
+
+            </div>
+            <div class="field">
+                <label> Watsup Number</label>
+                <input type="tel" placeholder="9999999999" id="watsupNumber">
+                <span class="material-icons success">check_circle</span>
+                <span class="material-icons error">error</span>
+                <small>Error Message</small>
+
+            </div>
+
+            <div class="field">
+                <label> Intent</label>
+                <select name="intent">
+                    <option value="Interested">Interested</option>
+                    <option value="Not Interested">Not Interested</option>
+                    <option value="Very Interested">Very Interested</option>
+                </select>
+
+            </div>
+
+            <div class="field">
+                <label> Site Phasing</label>
+                <select name="sitePhasing">
+                    <option value="East">East</option>
+                    <option value="West">West</option>
+                    <option value="North">North</option>
+                    <option value="South">South</option>
+                </select>
+
+            </div>
+            <div class="field">
+                <label> Client Status</label>
+                <select name="clientStatus">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+            </div>
+            <div class="field">
+                <label> Schedule Recall</label>
+                <input type="date" name="Schedulerecall">
+
+            </div>
+            <div class="field">
+                <label> Location</label>
+                <select name="location">
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mysore">Mysore</option>
+                    <option value="Tumkur">Tumkur</option>
+                    <option value="Madhuri">Madhuri</option>
+                    <option value="GBD">GBD</option>
+                </select>
+                </div>
+                <div class="field">
+                    <label> Site Ratio</label>
+                    <select name="site_ratio">
+                        <option value= 30*40>30*40 </option>
+                        <option value= 30*50>30*50 </option>
+                        <option value= 40*60>40*60 </option>
+                        <option value= 25*30>25*30 </option>
+                        <option value= 40*80>40*80 </option>
+            
+                    </select>
+                    </div>
+                    <div class="field">
+                        <label> Vehical Number</label>
+                        <input type="text" id="vehicalNumber" name="vehicalNumber"> 
+                    </div>
+
+                        
+                        <div class="field">
+                            <label> Profession </label>
+                            <select  name=" profession" >
+                                <option value="teache"> Teacher</option>
+                                <option value="private sector"> Private Sector</option>
+                                <option value="govt. sector"> Govt. Sector</option>
+                                <option value="business"> Business</option>
+                                <option value="doctor"> Doctor</option>
+                            </select> 
+                            </div>
+
+                            <div class="field">
+                                <label> Rating  </label>
+                                <select  name=" rating">
+                                    <option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3"> 3</option>
+                                    <option value="4"> 4</option>
+                                    <option value="5"> 5</option>
+                                </select>
+                                </div>
+
+                                <input type="submit" class="button">
+
+        </form>
         
-        Intent: 
-        <select name="intent">
-            <option value="Interested">Interested</option>
-            <option value="Not Interested">Not Interested</option>
-            <option value="Very Interested">Very Interested</option>
-        </select><br> <br>
-        
-        Site Phasing: 
-        <select name="sitePhasing">
-            <option value="East">East</option>
-            <option value="West">West</option>
-            <option value="North">North</option>
-            <option value="South">South</option>
-        </select><br><br>
-        
-        Client Status: 
-        <select name="clientStatus">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select><br><br>
-        
-        Schedule Recall: 
-        <input type="date" name="scheduleRecall"><br><br>
-        Location: 
-        <select name="location">
-            <option value="Bangalore">Bangalore</option>
-            <option value="Mysore">Mysore</option>
-            <option value="Tumkur">Tumkur</option>
-            <option value="Madhuri">Madhuri</option>
-            <option value="GBD">GBD</option>
-        </select><br> <br>
-        Site_Ratio:
-        <select name="site_ratio">
-            <option value= 30*40>30*40 </option>
-            <option value= 30*50>30*50 </option>
-            <option value= 40*60>40*60 </option>
-            <option value= 25*30>25*30 </option>
-            <option value= 40*80>40*80 </option>
-
-        </select> <br><br>
-        Vehical  Number : 
-        <input type="text" name="vehicalNumber"> <br> <br>
-        Profession :
-        <select  name=" profession">
-            <option value="teache"> Teacher</option>
-            <option value="private sector"> Private Sector</option>
-            <option value="govt. sector"> Govt. Sector</option>
-            <option value="business"> Business</option>
-            <option value="doctor"> Doctor</option>
-        </select> <br><br>
-
-        Rating :
-        <select  name=" rating">
-            <option value="1"> 1</option>
-            <option value="2"> 2</option>
-            <option value="3"> 3</option>
-            <option value="4"> 4</option>
-            <option value="5"> 5</option>
-        </select> <br><br>
-
-        <button type="button"  name="Register" onclick="register" style="text-align: center"> Register</button>
-        
 
 
-    </form>
-</div>
+    </div>   
+
+<script src="register.js"></script>
+
 
 </body>
 </html>

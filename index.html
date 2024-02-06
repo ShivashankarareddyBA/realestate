@@ -4,28 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <form id="Loginaccount">
-            UserName: <input type="text" email = "name" id=" email" >
-            <br>
-            <br>
-            Password: <input type="password" name = "password" id="password">
-            <br>
-            <br>
-            <button type="button" onclick="login()"> Login</button>
+    <div class="container">
+        <div class="header">
+            <h2>Login Account</h2>
+        </div>
+        
+            <form  action="dashboard.html" class="form" id="form">
+                <div class="field">
+                    <label> Email Address</label>
+                    <input type="email" placeholder="xyx@gmail.com" id="email">
+                    <span class="material-icons success">check_circle</span>
+                    <span class="material-icons error">error</span>
+                    <small>Error Message</small>
+    
+                </div>
+                <div class="field">
+                    <label> Password</label>
+                    <input type="password" placeholder="xxxxxxx" id="password">
+                    <span class="material-icons success">check_circle</span>
+                    <span class="material-icons error">error</span>
+                    <small>Error Message</small>
+    
+                </div>
+                <button type="submit" class="button" >Login</button>
+            
             
             
             
         </form>
+    
     </div>
     <script src="login.js"></script>
-    
     
 </body>
 </html>

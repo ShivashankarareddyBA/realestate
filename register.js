@@ -1,25 +1,111 @@
-function register() {
-    const userName = document.getElementsByName("userName")[0].value;
-    const phoneNumber = document.getElementsByName("phoneNumber")[0].value;
-    const email = document.getElementsByName("email")[0].value;
-    const WatsupNumber = document.getElementsByName("WatsupNumber")[0].value;
-    const intent = document.getElementsByName("intent")[0].value;
-    const sitePhasing = document.getElementsByName("sitePhasing")[0].value;
-    const clientStatus = document.getElementsByName("clientStatus")[0].value;
-    const scheduleRecall = document.getElementsByName("scheduleRecall")[0].value;
-    const location = document.getElementsByName("location")[0].value;
-    const siteRatio = document.getElementsByName("site_ratio")[0].value;
-    const vehicalNumber = document.getElementsByName("vehicalNumber")[0].value;
-    const profession = document.getElementsByName("profession")[0].value;
-    const rating = document.getElementsByName("rating")[0].value;
 
- if (checkUniqueness(userName,phoneNumber, email, WatsupNumber, 
-    intent,sitePhasing, clientStatus, scheduleRecall, location,siteRatio, vehicalNumber,profession, rating,)){
+document.addEventListener('DOMContentLoaded', () => {
 
-        alert(" You have been Registered Successfully");
+const form = document.getElementById("form");
+const userName = document.getElementById("userName");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const cpassword = document.getElementById('cpassword');
+const phoneNumber = document.getElementById('phoneNumber');
+const watsupNumber = document.getElementById("watsupNumber");
 
- }else{
-    alert("User already exists. please try to login")
- }
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (validate()) {
+        window.location.href = "index.html";
+    }
+});
+
+function validate() {
+    let nameValue = userName.value.trim();
+    let emailValue = email.value.trim();
+    let passwordValue = password.value.trim();
+    let cPasswordValue = cpassword.value.trim();
+    let pNumberValue = phoneNumber.value.trim();
+    let watsupNumValue = watsupNumber.value.trim();
+    let isValid = true;
+
+    if (nameValue === "") {
+        setError(userName, 'User Name cannot be empty');
+        isValid = false;
+    } else if (nameValue.length < 4) {
+        setError(userName, "User Name should be minimum of 4 characters");
+        isValid = false;
+    } else {
+        setSuccess(userName);
+    }
+
+    if (emailValue === "") {
+        setError(email, 'Email cannot be empty');
+        isValid = false;
+    } else if (!emailCheck(emailValue)) {
+        setError(email, 'Enter Valid Email Id');
+        isValid = false;
+    } else {
+        setSuccess(email);
+    }
+
+    if (passwordValue === "") {
+        setError(password, 'Password field cannot be empty');
+        isValid = false;
+    } else if (passwordValue.length < 8) {
+        setError(password, 'Password must be at least 8 characters long');
+        isValid = false;
+    } else {
+        setSuccess(password);
+    }
+
+    if (cPasswordValue === "") {
+        setError(cpassword, 'Confirm password cannot be empty');
+        isValid = false;
+    } else if (cPasswordValue !== passwordValue) {
+        setError(cpassword, "Passwords do not match");
+        isValid = false;
+    } else {
+        setSuccess(cpassword);
+    }
+
+    if (pNumberValue === "") {
+        setError(phoneNumber, 'Phone Number cannot be empty');
+        isValid = false;
+    } else if (pNumberValue.length < 10) {
+        setError(phoneNumber, 'Phone number must be 10 digits');
+        isValid = false;
+    } else {
+        setSuccess(phoneNumber);
+    }
+
+    if (watsupNumValue === "") {
+        setError(watsupNumber, 'Watsup Number cannot be empty');
+        isValid = false;
+    } else if (watsupNumValue !== pNumberValue) {
+        setError(watsupNumber, 'Phone and Watsup Number are not similar');
+        isValid = false;
+    } else {
+        setSuccess(watsupNumber);
+    }
+    return isValid;
+
+
 }
-    
+
+function setError(input, message) {
+    let parent = input.parentElement;
+    let small = parent.querySelector('small');
+    small.innerText = message;
+    parent.classList.add('error');
+    parent.classList.remove('success');
+}
+
+function setSuccess(input) {
+    let parent = input.parentElement;
+    parent.classList.add('success');
+    parent.classList.remove('error');
+}
+
+function emailCheck(input) {
+    let emailReg = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    let valid = emailReg.test(input.trim());
+    return valid;
+}
+});
