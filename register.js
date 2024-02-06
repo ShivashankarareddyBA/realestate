@@ -8,10 +8,12 @@ const password = document.getElementById("password");
 const cpassword = document.getElementById('cpassword');
 const phoneNumber = document.getElementById('phoneNumber');
 const watsupNumber = document.getElementById("watsupNumber");
+loadFormData();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (validate()) {
+        saveFormData();
         window.location.href = "index.html";
     }
 });
@@ -107,5 +109,46 @@ function emailCheck(input) {
     let emailReg = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
     let valid = emailReg.test(input.trim());
     return valid;
+}
+function saveFormData() {
+    
+    localStorage.setItem('userName', userName.value);
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('password', password.value);
+    localStorage.setItem('cpassword',cpassword.value);
+    localStorage.setItem('phoneNumber', phoneNumber.value);
+    localStorage.setItem('watsupNumber',watsupNumber.value);
+    localStorage.setItem('intent', intent.value);
+    localStorage.setItem('sitePhasing', sitePhasing.value);
+    localStorage.setItem('clientStatus',clientStatus.value);
+    localStorage.setItem('Schedulerecall',Schedulerecall.value);
+    localStorage.setItem('location',location.value);
+    localStorage.setItem('site_ratio', site_ratio.value);
+    localStorage.setItem('vehicalNumber', vehicalNumber.value);
+    localStorage.setItem('profession',profession.value);
+    localStorage.setItem('rating',rating.value);
+
+    
+}
+
+function loadFormData() {
+    
+    userName.value = localStorage.getItem('userName') || '';
+    email.value = localStorage.getItem('email') || '';
+    password.value= localStorage.getItem('password') || '';
+    cpassword.value=localStorage.getItem('cpassword') || '';
+    phoneNumber.value=localStorage.getItem('phoneNumber') || '';
+    watsupNumber.value=localStorage.getItem('watsupNumber') || '';
+    intent.value=localStorage.getItem('intent') || '';
+    sitePhasing.value=localStorage.getItem('sitePhasing') || '';
+    clientStatus.value=localStorage.getItem('clientStatus') || '';
+    Schedulerecall.value=localStorage.getItem('Schedulerecall') || '';
+    location.value=localStorage.getItem('location') || '';
+    site_ratio.value=localStorage.getItem('site_ratio') || '';
+    vehicalNumber.value=localStorage.getItem('vehicalNumber') || '';
+    profession.value=localStorage.getItem('profession') || '';
+    rating.value=localStorage.getItem('rating') || '';
+
+
 }
 });
