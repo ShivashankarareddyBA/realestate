@@ -26,9 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
             setSuccess(password);
         }
 
-        
         if (emailValue !== "" && passwordValue !== "") {
-            window.location.href = "dashboard.html";
+            
+            fetch('http://localhost/api/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2lzc3VlciIsInN1YiI6MSwiaWF0IjoxNzA3Mjc2MzI0LCJleHAiOjE3MDcyNzk5MjR9.TNKZiUztr_SggnTYXjo2Y3x7raVXANVKs0OScUPgGJw'
+                },
+                body: JSON.stringify({ email: emailValue, password: passwordValue })
+            })
+            .then(response => {
+                if (response.ok) {
+                    
+                    window.location.href = "dashboard.html";
+                } else {
+                    
+                    console.error('Authentication failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error during authentication:', error);
+            });
         }
     }
 

@@ -3,32 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DashBoard</title>
+    <title>Dash Board</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <h2>Logged In Users</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>User Name</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>WhatsApp Number</th>
-                <th>intent</th>
-                <th>client Status</th>
-                <th>Schedule Recall</th>
-                <th>Location</th>
-                <th>Site Ratio</th>
-                <th>Vehicle Number</th>
-                <th>Profession</th>
-                <th>Rating</th>
-            </tr>
-        </thead>
-        <tbody id="userList">
-            
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="headerbtn">
+                    
+          <h2>
+            <button type="button" id="btn-client-list">Client List</button>
+            <button type="button" id="btn-add-client">Add Client</button>
+             </h2>
+        </div>
+        
+                      <div id="clientList">
+                        <span class="button-wrapper">
+                            <button type="button" id="btn-add" >+</button>
+                        </span>
 
-    
+                        <table id="table" border="1" width="1300" height="300"  >
+                            <thead>
+                                <tr>
+                                    <!-- Placeholder for the "+" button -->
+                                    <th colspan="2">Status</th> 
+                                    <th>Id</th>    
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                    <th>WhatsApp Number</th>
+                                    <th>Intent</th>
+                                    <th>Client Status</th>
+                                    <th>Schedule Recall</th>
+                                    <th>Location</th>
+                                    <th>Site Ratio</th>
+                                    <th>Vehicle Number</th>
+                                    <th>Profession</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userList">
+                                <!-- Each row in the tbody -->
+                                <tr>
+                                    <!-- Placeholder for the "+" button -->
+                                    <td>
+                                        <!-- Edit icon button -->
+                                        <button type="button" class="edit-btn"><i class="fas fa-edit"></i></button>
+                                        <!-- Delete icon button -->
+                                        <button type="button" class="delete-btn"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                    <td>1</td>    
+                                    <td>Name 1</td>
+                                    <td>Email 1</td>
+                                    <td>Phone Number 1</td>
+                                    <td>WhatsApp Number 1</td>
+                                    <td>Intent 1</td>
+                                    <td>Client Status 1</td>
+                                    <td>Schedule Recall 1</td>
+                                    <td>Location 1</td>
+                                    <td>Site Ratio 1</td>
+                                    <td>Vehicle Number 1</td>
+                                    <td>Profession 1</td>
+                                    <td>Rating 1</td>
+                                    <tr>
+                                        
+                                    </tr>
+                                </tr>
+
+                                <!-- Additional rows can be added similarly -->
+                                
+                            </tbody>
+                            
+                            
+
+                        </table>
+                        <div class="pagination">
+                            <button id="prev-page">Prev page </button>
+                            <span id="page-number"> Page Number 1</span>
+                            <button id="next-page"> Nextpage </button>
+                        </div>
+
+    </div>
+
+    </div>
+    <script src="dashboard.js"></script>
 </body>
 </html>

@@ -103,18 +103,21 @@ body{
         visibility: visible;
         color: #e74c3c;
 }
-
-/* dash boad part*/
-
-table {
-        border-collapse: collapse;
-        width: 100%;
+.rating-options {
+        display: flex;
+        justify-content: flex-start;
     }
-    th, td {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
+    
+    .rating-options input[type="radio"] {
+        display: none;
     }
-    th {
-        background-color: #f2f2f2;
+    
+    .rating-options label {
+        font-size: 2em;
+        color: #ccc;
+        cursor: pointer;
+    }
+    
+    .rating-options input[type="radio"]:checked ~ label {
+        color: #ffdf00;
     }

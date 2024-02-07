@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Account</title>
+    <title>Client Details</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h2>Register Account</h2>
+            <h2>Add Client details</h2>
         </div>
         <form  action="index.html" class="form" id="form">
             <div class="field">
@@ -61,15 +61,22 @@
                 <small>Error Message</small>
 
             </div>
-
             <div class="field">
-                <label> Intent</label>
-                <select name="intent" id="intent">
-                    <option value="Interested">Interested</option>
-                    <option value="Not Interested">Not Interested</option>
-                    <option value="Very Interested">Very Interested</option>
-                </select>
-
+                <label>Intent</label>
+                <div class="intent-options">
+                    <label>
+                        <input type="radio" name="intent" value="Interested" checked>
+                        Interested
+                    </label>
+                    <label>
+                        <input type="radio" name="intent" value="Not Interested">
+                        Not Interested
+                    </label>
+                    <label>
+                        <input type="radio" name="intent" value="Very Interested">
+                        Very Interested
+                    </label>
+                </div>
             </div>
 
             <div class="field">
@@ -108,17 +115,18 @@
                     <option value="GBD">GBD</option>
                 </select>
                 </div>
-                <div class="field">
-                    <label> Site Ratio</label>
-                    <select name="site_ratio" id="site_ratio">
-                        <option value= 30*40>30*40 </option>
-                        <option value= 30*50>30*50 </option>
-                        <option value= 40*60>40*60 </option>
-                        <option value= 25*30>25*30 </option>
-                        <option value= 40*80>40*80 </option>
-            
-                    </select>
+                
+                    <div class="field">
+                        <label>Site Ratio</label>
+                        <div class="site-ratio-options">
+                            <input type="radio" id="ratio30x40" name="site_ratio" value="30x40" checked>
+                            <label for="ratio30x40">30x40</label>
+                            <input type="radio" id="ratio30x50" name="site_ratio" value="30x50">
+                            <label for="ratio30x50">30x50</label>
+                        </div>
                     </div>
+                    
+                </div>
                     <div class="field">
                         <label> Vehical Number</label>
                         <input type="text" id="vehicalNumber" name="vehicalNumber" itemid="vehicalNumber"> 
@@ -137,15 +145,21 @@
                             </div>
 
                             <div class="field">
-                                <label> Rating  </label>
-                                <select  name=" rating" id="rating">
-                                    <option value="1"> 1</option>
-                                    <option value="2"> 2</option>
-                                    <option value="3"> 3</option>
-                                    <option value="4"> 4</option>
-                                    <option value="5"> 5</option>
-                                </select>
+                                <label for="rating">Rating</label>
+                                <div class="rating-options">
+                                    <input type="radio" id="star5" name="rating" value="5">
+                                    <label for="star5" title="5 stars">&#9733;</label>
+                                    <input type="radio" id="star4" name="rating" value="4">
+                                    <label for="star4" title="4 stars">&#9733;</label>
+                                    <input type="radio" id="star3" name="rating" value="3">
+                                    <label for="star3" title="3 stars">&#9733;</label>
+                                    <input type="radio" id="star2" name="rating" value="2">
+                                    <label for="star2" title="2 stars">&#9733;</label>
+                                    <input type="radio" id="star1" name="rating" value="1">
+                                    <label for="star1" title="1 star">&#9733;</label>
                                 </div>
+                            </div>
+                            
 
                                 <input type="submit" class="button">
 
